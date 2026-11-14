@@ -1,3 +1,4 @@
+import { PeyService } from '../donations/pey.service';
 import { Injectable } from '@nestjs/common';
 import { GoogleOAuthIntegration } from './google-oauth.integration';
 import { ResendService } from '../emails/services/resend.service';
@@ -12,10 +13,12 @@ export class IntegrationsService {
   constructor(
     private readonly googleOAuth: GoogleOAuthIntegration,
     private readonly resend: ResendService,
+    private readonly pey: PeyService,
   ) {}
 
   listStatus(): IntegrationStatusMap {
     return {
+      pey: { configured: this.pey.isConfigured() },
       [this.googleOAuth.integrationId]: {
         configured: this.googleOAuth.isConfigured(),
       },

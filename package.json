@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "audit:security": "npm audit --omit=dev --audit-level=high",
     "seed:demo": "node scripts/seed-demo-campaigns.mjs",
-    "test:campaigns": "npm run build && node --test tests/campaigns.test.cjs"
+    "test:campaigns": "npm run build && node --test tests/campaigns.test.cjs",
+    "test:payments": "npm run build && node --test tests/campaigns.test.cjs tests/payments.test.cjs"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.24",
@@ -33,9 +34,11 @@
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-jwt": "^4.0.1",
+    "qrcode": "^1.5.4",
     "reflect-metadata": "^0.2.0",
     "resend": "^4.8.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "standardwebhooks": "^1.1.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^11.0.21",
@@ -45,6 +48,7 @@
     "@types/node": "^22.0.0",
     "@types/passport-google-oauth20": "^2.0.16",
     "@types/passport-jwt": "^4.0.1",
+    "@types/qrcode": "^1.5.6",
     "dotenv": "^16.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.0"

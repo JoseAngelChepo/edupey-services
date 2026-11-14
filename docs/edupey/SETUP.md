@@ -34,3 +34,7 @@ No hacer push a los remotos de `template-platform` / `template-services`. Contex
 - Navegador: filtro de becas, detalle, login, seguimiento guardado y dashboard tras recarga. Vista móvil a 390px revisada.
 - Fuente tipográfica: system-ui, elegida para lectura y builds offline.
 - Formulario administrativo solo visible para cuentas con rol admin. No se promovió a ningún usuario. La prueba end-to-end de publicación con un administrador queda pendiente de contar con esa cuenta.
+
+## Pey preparado
+
+Campos PEY_API_KEY, PEY_WEBHOOK_SECRET y PEY_BANK_ACCOUNT_ID preparados en .env y .env.example. El usuario pidió dejarlo sin activar. Ver PEY.md. Health reporta configured=false y la API de historial funciona autenticada. Sin pagos reales ejecutados.

@@ -2,7 +2,7 @@
 
 ## Estado inicial
 
-Base de Next.js y NestJS conectada a MongoDB. Implementados campañas públicas, presupuesto y políticas, publicación por administrador, seguimiento persistente y dashboard. Perfiles infantiles, donaciones, juego, estimación facial y canjes siguen pendientes. Ver CAMPAIGNS.md para contratos implementados.
+Base de Next.js y NestJS conectada a MongoDB. Implementados campañas públicas, presupuesto y políticas, publicación por administrador, seguimiento persistente y dashboard. Integración Pey preparada con QR, recibos y dashboard; activación y prueba real pendientes por decisión del usuario. Perfiles infantiles, juego, estimación facial y canjes siguen pendientes. Ver CAMPAIGNS.md para contratos implementados.
 
 ## Recorrido de demo
 
@@ -44,7 +44,7 @@ Dinero en unidades menores enteras con moneda explícita. Mantener puntos separa
 - [x] Fase 0: setup, entornos ignorados, contexto y validación de builds.
 - [ ] Fase 1: MongoDB, health y auth verificados; roles básicos user/admin existentes. Permisos de tutor, facilitador y niños pendientes. Decisión del usuario para el hackathon: nuevas cuentas activas por defecto (`isActive: true`), con sesión al registrarse. Conservar el bloqueo de cuentas explícitamente inactivas.
 - [ ] Fase 2: campañas y seguimiento en dashboard implementados. Perfiles infantiles protegidos y asignaciones pendientes.
-- [ ] Fase 3: Pey, webhook verificado, deduplicación y conciliación.
+- [ ] Fase 3: código Pey, webhook firmado, deduplicación, historial y conciliación manual implementados y probados con fixtures. Credenciales, URL pública y prueba real pendientes.
 - [ ] Fase 4: juego único, intentos y progreso validados en servidor.
 - [ ] Fase 5: validación del participante, proveedor de edad opcional/configurable, revisión humana y canjes restringidos.
 - [ ] Fase 6: demo integral, comprobación de permisos, trazabilidad de fondos y entregas.

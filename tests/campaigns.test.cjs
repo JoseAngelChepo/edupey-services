@@ -22,6 +22,6 @@ test('rejects expired deadlines before persisting',async()=>{
 });
 test('campaign output does not expose creator or fabricate donations',async()=>{
  const fixture={...valid(),id:'000000000000000000000002',deadline:new Date(Date.now()+86400000),createdBy:'private',currency:'MXN',isDemo:false};
- const service=new CampaignsService({findById(){return{exec:async()=>fixture};}},{});
+ const service=new CampaignsService({findById(){return{exec:async()=>fixture};}},{},{aggregate(){return{exec:async()=>[]};}},{isConfigured:()=>false});
  const view=await service.detail(fixture.id);assert.equal(view.raisedMinor,0);assert.equal(view.paymentAvailable,false);assert.equal('createdBy' in view,false);
 });

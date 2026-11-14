@@ -15,7 +15,7 @@ Creación: title, summary, description, category (materials/scholarship/technolo
 
 No acepta recaudación, beneficiarios identificables, estado de pago ni createdBy desde el navegador. createdBy viene de la sesión y no se expone públicamente. beneficiaryCount es una cantidad prevista; no equivale a matrícula o identidad verificada. El cierre de plazo se calcula en servidor.
 
-`raisedMinor: 0` y `paymentAvailable: false` expresan que aún no se implementaron pagos; no hay endpoint para confirmar cobros. Seguir una campaña no es donar ni apadrinar un niño. El índice único (userId,campaignId) impide duplicar seguimientos y las consultas se limitan al usuario de sesión.
+`raisedMinor` se calcula desde recibos confirmados. `paymentAvailable` requiere Pey configurado, campaña abierta y no demo. Ver PEY.md para generación y confirmación de cobros. Seguir una campaña no es donar ni apadrinar un niño. El índice único (userId,campaignId) impide duplicar seguimientos y las consultas se limitan al usuario de sesión.
 
 ## Desarrollo y datos demo
 
@@ -25,7 +25,7 @@ No acepta recaudación, beneficiarios identificables, estado de pago ni createdB
 
 `npm run test:campaigns` compila y ejecuta cuatro pruebas de validación y privacidad. Runtime comprobó lectura, permisos, CSRF y seguimiento sin duplicados. La UI permite publicar solo a administradores; no se crearon administradores para realizar la prueba.
 
-Pendiente: edición/paginación de campañas, moderación de publicación, perfiles infantiles, asignaciones, conciliación Pey, revisión humana operativa y entregas. Las menciones de revisión en la UI describen el modelo previsto; no indican un módulo de entrega ya activo.
+Pendiente: edición/paginación de campañas, moderación de publicación, perfiles infantiles, asignaciones, activación y prueba real con Pey, revisión humana operativa y entregas. Las menciones de revisión en la UI describen el modelo previsto; no indican un módulo de entrega ya activo.
 
 ## Entrada de la plataforma
 

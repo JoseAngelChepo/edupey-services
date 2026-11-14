@@ -72,3 +72,7 @@ Routes:
 ## Adding public API routes later
 
 Use **`OptionalJwtAuthGuard`** + **`@OptionalUser()`** when the route is public but should enrich the response for logged-in callers. See [`GUARDS.md`](./GUARDS.md).
+
+## Donaciones Pey / CoDi
+
+[Configuración, contratos y límites](./edupey/PEY.md). Integración preparada, sin claves y sin prueba bancaria real.
