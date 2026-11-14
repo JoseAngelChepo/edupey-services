@@ -26,3 +26,7 @@ No acepta recaudación, beneficiarios identificables, estado de pago ni createdB
 `npm run test:campaigns` compila y ejecuta cuatro pruebas de validación y privacidad. Runtime comprobó lectura, permisos, CSRF y seguimiento sin duplicados. La UI permite publicar solo a administradores; no se crearon administradores para realizar la prueba.
 
 Pendiente: edición/paginación de campañas, moderación de publicación, perfiles infantiles, asignaciones, conciliación Pey, revisión humana operativa y entregas. Las menciones de revisión en la UI describen el modelo previsto; no indican un módulo de entrega ya activo.
+
+## Entrada de la plataforma
+
+El catálogo se muestra en `/` y `/campanas`. La explicación del proyecto se conserva en `/proyecto`. Arrancar el frontend desde `edupey-platform` y abrir http://localhost:3000.
