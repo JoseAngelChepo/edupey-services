@@ -18,7 +18,12 @@ Ejecutar npm run dev desde edupey-services; comprobar /api/v1/health y después 
 
 ## Repositorios
 
-Dos clones independientes. Los remotos apuntan todavía a las plantillas; no hacer push allí. Contexto canónico en docs/ de la raíz, copiado a docs/edupey/ de ambos proyectos.
+Repos públicos independientes (historial limpio, sin vínculo a las plantillas):
+
+- https://github.com/JoseAngelChepo/edupey-platform
+- https://github.com/JoseAngelChepo/edupey-services
+
+No hacer push a los remotos de `template-platform` / `template-services`. Contexto canónico en docs/ de la raíz, copiado a docs/edupey/ de ambos proyectos.
 
 ## Entrega de campañas
 
