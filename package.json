@@ -15,8 +15,10 @@
     "typecheck": "tsc --noEmit",
     "audit:security": "npm audit --omit=dev --audit-level=high",
     "seed:demo": "node scripts/seed-demo-campaigns.mjs",
+    "promote:admin": "node scripts/promote-admin.mjs",
     "test:campaigns": "npm run build && node --test tests/campaigns.test.cjs",
-    "test:payments": "npm run build && node --test tests/campaigns.test.cjs tests/payments.test.cjs"
+    "test:payments": "npm run build && node --test tests/campaigns.test.cjs tests/payments.test.cjs",
+    "test:admin": "npm run build && node --test tests/admin.test.cjs"
   },
   "dependencies": {
     "@nestjs/common": "^11.1.24",

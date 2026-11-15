@@ -28,8 +28,13 @@ La API usa MXN; internamente se guardan centavos enteros. Rango de aportación: 
 | GET /donations/:id | Solo propietario; QR únicamente si está pendiente y vigente |
 | POST /donations/:id/reconcile | Solo propietario + CSRF; consulta paginada de transacciones Pey, máximo 6 solicitudes/minuto |
 | POST /webhooks/pey | Firma Standard Webhooks sobre raw body; no cookies ni CSRF |
+| GET /admin/overview | Admin: resumen de aportaciones, recibos y recaudación |
+| GET /admin/donations | Admin: listado con filtros de estado/búsqueda y detalle de donante |
+| GET /admin/donations/:id | Admin: detalle operativo (recibos, revisión, IDC); sin QR ni CLABE |
+| POST /admin/donations/:id/reconcile | Admin + CSRF: conciliación Pey sin exigir propiedad |
+| GET /admin/receipts | Admin: recibos confirmados o en revisión |
 
-UI: monto en detalle de campaña, `/aportaciones/:id` para QR/estado y sección “Mis aportaciones” en dashboard. La página del QR consulta el estado local cada 6 segundos; “Ya pagué” consulta a Pey y nunca confirma por sí mismo.
+UI: monto en detalle de campaña, `/aportaciones/:id` para QR/estado y sección “Mis aportaciones” en dashboard. La página del QR consulta el estado local cada 6 segundos; “Ya pagué” consulta a Pey y nunca confirma por sí mismo. El dashboard muestra panel operativo solo a cuentas `admin`.
 
 ## Integridad y recuperación
 
@@ -46,7 +51,7 @@ UI: monto en detalle de campaña, `/aportaciones/:id` para QR/estado y sección 
 
 ## Límites actuales
 
-Pendiente prueba real con Pey, destinatario y URL pública. No hay devoluciones automáticas, recibos fiscales, conciliación programada ni panel operativo para resolver revisiones. Los casos de revisión se conservan para intervención del equipo; no se promete entrega de beneficios con fondos sin confirmar. La comprobación de aprendizaje y la aprobación humana de beneficios son módulos separados y siguen pendientes.
+Pendiente prueba real con Pey, destinatario y URL pública. No hay devoluciones automáticas, recibos fiscales ni conciliación programada. El panel admin lista revisiones y permite conciliar manualmente; no resuelve automáticamente mismatches de monto. Promover admin: `npm run promote:admin -- correo@ejemplo.com` y volver a iniciar sesión. Los casos de revisión se conservan para intervención del equipo; no se promete entrega de beneficios con fondos sin confirmar. La comprobación de aprendizaje y la aprobación humana de beneficios son módulos separados y siguen pendientes.
 
 ## Verificación
 

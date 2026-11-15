@@ -29,4 +29,4 @@ Pendiente: edición/paginación de campañas, moderación de publicación, perfi
 
 ## Entrada de la plataforma
 
-El catálogo se muestra en `/` y `/campanas`. La explicación del proyecto se conserva en `/proyecto`. Arrancar el frontend desde `edupey-platform` y abrir http://localhost:3000.
+El catálogo se muestra en `/` y `/campanas`. Arrancar el frontend desde `edupey-platform` y abrir http://localhost:3000.

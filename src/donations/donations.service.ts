@@ -83,7 +83,15 @@ export class DonationsService implements OnModuleInit {
   }
 
   async reconcile(id:Types.ObjectId,userId:string) {
-    const d=await this.owned(id,userId);this.pey.requireConfigured();
+    return this.reconcileDonation(await this.owned(id,userId),true);
+  }
+  async adminReconcile(id:Types.ObjectId) {
+    const d=await this.donations.findById(id).select('+qrImage').exec();
+    if(!d) throw new NotFoundException('Aportación no encontrada.');
+    return this.reconcileDonation(d,false);
+  }
+  private async reconcileDonation(d:DonationDocument,includeQr:boolean) {
+    this.pey.requireConfigured();
     if(d.providerQrId) {
       let token:string|undefined;
       let pages=0;
@@ -95,7 +103,7 @@ export class DonationsService implements OnModuleInit {
         if(++pages>=10 && token) throw new BadGatewayException('Hay más pagos por conciliar. Solicita una revisión al equipo.');
       } while(token);
     }
-    return this.view(d,true);
+    return this.view(d,includeQr);
   }
 
   async webhook(raw:Buffer|undefined,headers:Record<string,string|string[]|undefined>) {

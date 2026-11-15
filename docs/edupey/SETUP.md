@@ -33,7 +33,7 @@ No hacer push a los remotos de `template-platform` / `template-services`. Contex
 - Prueba HTTP con cuenta ficticia: catálogo, presupuesto, IDs inválidos/ausentes, acceso anónimo, publicación restringida a admin, CSRF y seguimiento idempotente/persistente. Sin crear donaciones.
 - Navegador: filtro de becas, detalle, login, seguimiento guardado y dashboard tras recarga. Vista móvil a 390px revisada.
 - Fuente tipográfica: system-ui, elegida para lectura y builds offline.
-- Formulario administrativo solo visible para cuentas con rol admin. No se promovió a ningún usuario. La prueba end-to-end de publicación con un administrador queda pendiente de contar con esa cuenta.
+- Formulario administrativo y panel operativo de aportaciones visibles para rol admin. Promover cuenta existente: `npm run promote:admin -- correo@ejemplo.com` (luego cerrar sesión y volver a entrar). La prueba end-to-end de publicación queda pendiente de promover la cuenta deseada.
 
 ## Pey preparado
 

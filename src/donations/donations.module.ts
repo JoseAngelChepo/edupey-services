@@ -7,6 +7,6 @@ import { DonationsService } from './donations.service';
 import { PeyService } from './pey.service';
 @Module({
   imports:[MongooseModule.forFeature([{name:Donation.name,schema:DonationSchema},{name:PaymentReceipt.name,schema:PaymentReceiptSchema},{name:Campaign.name,schema:CampaignSchema}])],
-  providers:[PeyService,DonationsService],controllers:[DonationsController],exports:[PeyService,MongooseModule],
+  providers:[PeyService,DonationsService],controllers:[DonationsController],exports:[PeyService,DonationsService,MongooseModule],
 })
 export class DonationsModule {}
